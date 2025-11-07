@@ -9,7 +9,7 @@ const { theme = "grey", workshop } = Astro.props;
     <h3><span>{workshop.data.title}</span></h3>
     <ArrowLink
       class="link"
-      href={`/workshops/${workshop.slug}`}
+      href={`/workshops/${workshop.id}`}
       title="Learn more"
     />
     <img class="image" src={workshop.data.image.src} alt="" />
