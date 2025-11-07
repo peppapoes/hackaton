@@ -1,0 +1,20 @@
+---
+import { getCollection, render } from "astro:content";
+import MarkdownPostLayout from "../../layouts/Markdown.astro";
+
+export async function getStaticPaths() {
+    const foundation = await getCollection("foundations");
+
+    return foundation.map((foundation) => ({
+        params: { id: foundation.id },
+        props: { foundation },
+    }));
+}
+
+const { foundation } = Astro.props;
+const { Content } = await render(foundation);
+---
+
+<MarkdownPostLayout frontmatter={foundation.data}>
+    <Content />
+</MarkdownPostLayout>
