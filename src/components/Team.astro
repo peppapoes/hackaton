@@ -1,5 +1,8 @@
 ---
-
+import { emitImageMetadata } from "astro/assets/utils";
+import TeamCard from "../components/TeamCard.astro";
+import { getCollection } from "astro:content";
+const team = await getCollection("team");
 ---
 
 <svg
@@ -30,8 +33,15 @@
     <p>Check these superheroes</p>
   </header>
   <ul>
-    <li>##TEAM MEMBER##</li>
+    {
+      team.map((member) => (
+        <li>
+          <TeamCard member={member}/>
+        </li>
+      ))
+    }
   </ul>
+  <!-- <li>##TEAM MEMBER##</li> -->
 </section>
 
 <style>
