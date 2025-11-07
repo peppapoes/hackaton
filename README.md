@@ -11,3 +11,9 @@
 ### Illustrations
 
 <https://pixels.market/illustrations/doodledo?c=technology>
+
+
+### names
+Elisa Wastyn
+Linde D'Hauwe
+Femke De Latter
